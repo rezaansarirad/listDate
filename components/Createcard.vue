@@ -153,9 +153,11 @@ export default {
     },
   },
   created() {
-    const list = localStorage.getItem("boostList");
-    if (list) {
-      this.boostLists = JSON.parse(list);
+    let list = localStorage.getItem("boostList");
+    list = JSON.parse(list);
+
+    if (list && list.length > 0) {
+      this.boostLists = list;
     }
   },
 };
